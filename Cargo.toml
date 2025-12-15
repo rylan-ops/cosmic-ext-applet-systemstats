@@ -1,0 +1,14 @@
+[package]
+name = "cosmic-applet-systemstats"
+version = "0.1.0"
+edition = "2021"
+license = "GPL-3.0"
+
+[dependencies.libcosmic]
+git = "https://github.com/pop-os/libcosmic.git"
+default-features = false
+features = ["applet", "wayland"]
+
+[profile.release]
+lto = "thin"
+strip = true

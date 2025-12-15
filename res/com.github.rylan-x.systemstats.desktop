@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=System Stats
+Comment=System monitoring applet for COSMIC
+Icon=computer-symbolic
+Exec=cosmic-applet-systemstats
+Terminal=false
+Categories=COSMIC
+NoDisplay=true
+X-CosmicApplet=true
+X-CosmicHoverPopup=Auto
+X-OverflowPriority=10
