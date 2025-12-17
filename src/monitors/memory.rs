@@ -1,24 +1,26 @@
-// TODO: Implement memory monitoring
+use sysinfo::System;
 
-// pub struct MemoryStats {
-//     used_bytes: u64,
-//     total_bytes: u64,
-// }
-//
-// impl MemoryStats {
-//     pub fn new() -> Self {
-//         todo!()
-//     }
-//
-//     pub fn update(&mut self) {
-//         todo!()
-//     }
-//
-//     pub fn used_gb(&self) -> f32 {
-//         self.used_bytes as f32 / 1024.0 / 1024.0 / 1024.0
-//     }
-//
-//     pub fn total_gb(&self) -> f32 {
-//         self.total_bytes as f32 / 1024.0 / 1024.0 / 1024.0
-//     }
-// }
+pub struct MemoryStats {
+    system: System,
+}
+
+impl MemoryStats {
+    pub fn new() -> Self {
+        let mut system = System::new_all();
+        system.refresh_all();
+
+        Self { system }
+    }
+
+    pub fn update(&mut self) {
+        self.system.refresh_memory();
+    }
+
+    pub fn used_gb(&self) -> f32 {
+        self.system.used_memory() as f32 / 1_073_741_824.0
+    }
+
+    pub fn total_gb(&self) -> f32 {
+        self.system.total_memory() as f32 / 1_073_741_824.0
+    }
+}

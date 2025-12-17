@@ -1,4 +1,5 @@
 mod app;
+mod monitors;
 
 use app::SystemStats;
 
