@@ -33,6 +33,6 @@ sudo just install
 ### Building from source
 ```bash
 cargo build --release
-sudo cp target/release/cosmic-applet-systemstats /usr/bin/
-sudo cp res/com.github.rylan-x.systemstats.desktop /usr/share/applications/
+sudo install -Dm755 target/release/cosmic-applet-systemstats /usr/bin/cosmic-applet-systemstats
+sudo install -Dm644 res/com.github.rylan-x.systemstats.desktop /usr/share/applications/com.github.rylan-x.systemstats.desktop
 ```
