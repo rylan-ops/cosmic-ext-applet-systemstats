@@ -16,8 +16,8 @@ impl GpuStats {
         self.max_temp_celsius = None;
         let mut max_temp = None;
 
-        // Detect AMD GPUs via sysfs
-        if let Some(temp) = self.detect_amd_max_temp() {
+        // Detect AMD/Intel GPUs via sysfs
+        if let Some(temp) = self.detect_sysfs_max_temp() {
             max_temp = Some(max_temp.map_or(temp, |t| f32::max(t, temp)));
         }
 
@@ -29,7 +29,7 @@ impl GpuStats {
         self.max_temp_celsius = max_temp;
     }
 
-    fn detect_amd_max_temp(&self) -> Option<f32> {
+    fn detect_sysfs_max_temp(&self) -> Option<f32> {
         let mut max_temp = None;
 
         if let Ok(entries) = fs::read_dir("/sys/class/drm") {
