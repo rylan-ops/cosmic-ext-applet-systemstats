@@ -1,8 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=System Stats
-Comment=System monitoring applet for COSMIC
-Icon=computer-symbolic
+Icon=systemstats-icon
 Exec=cosmic-applet-systemstats
 Terminal=false
 Categories=COSMIC

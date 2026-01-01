@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <circle cx="64" cy="64" r="60" fill="#2d2d2d"/>
+
+  <!-- Simple vertical bars -->
+  <g transform="translate(32, 32)">
+    <!-- CPU bar (red) -->
+    <rect x="0" y="24" width="14" height="40" rx="3" fill="#ff4444"/>
+
+    <!-- Memory bar (yellow) -->
+    <rect x="18" y="12" width="14" height="52" rx="3" fill="#ffdd44"/>
+
+    <!-- Network download (green) -->
+    <rect x="36" y="28" width="14" height="36" rx="3" fill="#44ff44"/>
+
+    <!-- Network upload (blue) -->
+    <rect x="54" y="36" width="14" height="28" rx="3" fill="#4488ff"/>
+  </g>
+
+  <!-- Gray arc -->
+  <path d="M 28,40 A 40,25 0 0,1 98,54" stroke="#888888" stroke-width="4" fill="none" opacity="0.6"/>
+</svg>
