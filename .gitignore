@@ -18,6 +18,9 @@
 # Flatpak artifacts
 /flatpak/build-dir/
 /flatpak/cargo-sources.json
+/flatpak/repo/
+/flatpak/build.txt
 /.flatpak-builder/
+/export/
 *.flatpak
 *.log
