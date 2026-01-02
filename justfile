@@ -6,7 +6,7 @@ build-release:
 install:
     install -Dm755 target/release/cosmic-applet-systemstats /usr/bin/cosmic-applet-systemstats
     install -Dm644 res/io.github.rylan_x.cosmic-applet-systemstats.desktop /usr/share/applications/io.github.rylan_x.cosmic-applet-systemstats.desktop
-    install -Dm644 res/systemstats-icon.svg /usr/share/icons/hicolor/scalable/apps/systemstats-icon.svg
+    install -Dm644 res/io.github.rylan_x.cosmic-applet-systemstats.svg /usr/share/icons/hicolor/scalable/apps/io.github.rylan_x.cosmic-applet-systemstats.svg
 
 # Clean build artifacts
 clean:

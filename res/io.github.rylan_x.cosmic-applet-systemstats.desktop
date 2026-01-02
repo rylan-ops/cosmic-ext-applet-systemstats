@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
 Name=System Stats
-Icon=systemstats-icon
+Icon=io.github.rylan_x.cosmic-applet-systemstats
 Exec=cosmic-applet-systemstats
 Terminal=false
-Categories=COSMIC
+Categories=System;Monitor;Utility;X-COSMIC;
 NoDisplay=true
 X-CosmicApplet=true
 X-CosmicHoverPopup=Auto
