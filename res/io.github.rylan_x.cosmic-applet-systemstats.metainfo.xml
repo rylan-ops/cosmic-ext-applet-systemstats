@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.rylan_x.cosmic-applet-systemstats</id>
+
+  <name>System Stats</name>
+  <summary>Lightweight system monitoring applet for COSMIC desktop</summary>
+
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+
+  <developer id="io.github.rylan_x">
+    <name>Rylan P</name>
+  </developer>
+
+  <description>
+    <p>
+      A lightweight system monitoring applet for the COSMIC desktop environment that displays real-time system information in your panel. Monitor CPU usage, memory consumption, network speeds, and hardware temperatures at a glance.
+    </p>
+    <p>Features:</p>
+    <ul>
+      <li>CPU usage monitoring with percentage display</li>
+      <li>Memory usage tracking in gigabytes</li>
+      <li>Network upload and download speeds (auto-scales to Mbps/Gbps)</li>
+      <li>CPU and GPU temperature monitoring</li>
+      <li>Configurable refresh rate and monitor toggles</li>
+      <li>Minimal performance impact</li>
+    </ul>
+    <p>
+      The applet integrates seamlessly with the COSMIC desktop environment and automatically detects available hardware sensors for temperature monitoring on AMD, Intel, and NVIDIA GPUs.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.github.rylan_x.cosmic-applet-systemstats.desktop</launchable>
+
+  <url type="homepage">https://github.com/rylan-x/cosmic-applet-systemstats</url>
+  <url type="bugtracker">https://github.com/rylan-x/cosmic-applet-systemstats/issues</url>
+  <url type="vcs-browser">https://github.com/rylan-x/cosmic-applet-systemstats</url>
+
+  <content_rating type="oars-1.1"/>
+
+  <releases>
+    <release version="1.0.0" date="2026-01-05">
+      <description>
+        <p>Initial release with core monitoring features:</p>
+        <ul>
+          <li>CPU usage monitoring</li>
+          <li>Memory usage tracking</li>
+          <li>Network speed monitoring</li>
+          <li>CPU and GPU temperature sensors</li>
+          <li>Configurable refresh intervals</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+
+  <screenshots>
+    <screenshot type="default">
+      <caption>System Stats applet displaying CPU, memory, network, and temperature monitors</caption>
+      <image>https://raw.githubusercontent.com/rylan-x/cosmic-applet-systemstats/main/res/screenshots/systemstats.png</image>
+    </screenshot>
+  </screenshots>
+
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+    <category>Utility</category>
+  </categories>
+
+  <keywords>
+    <keyword>system</keyword>
+    <keyword>monitor</keyword>
+    <keyword>cpu</keyword>
+    <keyword>memory</keyword>
+    <keyword>network</keyword>
+    <keyword>temperature</keyword>
+    <keyword>stats</keyword>
+    <keyword>applet</keyword>
+    <keyword>cosmic</keyword>
+  </keywords>
+
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">360</display_length>
+  </requires>
+</component>
