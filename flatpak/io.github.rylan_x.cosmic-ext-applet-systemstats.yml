@@ -1,10 +1,10 @@
-app-id: io.github.rylan_x.cosmic-applet-systemstats
+app-id: io.github.rylan_x.cosmic-ext-applet-systemstats
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.rust-stable
-command: cosmic-applet-systemstats
+command: cosmic-ext-applet-systemstats
 
 finish-args:
   # Wayland access
@@ -21,18 +21,18 @@ finish-args:
 build-options:
   append-path: /usr/lib/sdk/rust-stable/bin
   env:
-    CARGO_HOME: /run/build/cosmic-applet-systemstats/cargo
+    CARGO_HOME: /run/build/cosmic-ext-applet-systemstats/cargo
 
 modules:
-  - name: cosmic-applet-systemstats
+  - name: cosmic-ext-applet-systemstats
     buildsystem: simple
     build-commands:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
-      - install -Dm755 target/release/cosmic-applet-systemstats -t /app/bin/
-      - install -Dm644 res/io.github.rylan_x.cosmic-applet-systemstats.desktop -t /app/share/applications/
-      - install -Dm644 res/io.github.rylan_x.cosmic-applet-systemstats.svg /app/share/icons/hicolor/scalable/apps/io.github.rylan_x.cosmic-applet-systemstats.svg
-      - install -Dm644 res/io.github.rylan_x.cosmic-applet-systemstats.metainfo.xml -t /app/share/metainfo/
+      - install -Dm755 target/release/cosmic-ext-applet-systemstats -t /app/bin/
+      - install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.desktop -t /app/share/applications/
+      - install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.svg /app/share/icons/hicolor/scalable/apps/io.github.rylan_x.cosmic-ext-applet-systemstats.svg
+      - install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: dir
         path: ..

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
-  <id>io.github.rylan_x.cosmic-applet-systemstats</id>
+  <id>io.github.rylan_x.cosmic-ext-applet-systemstats</id>
 
   <name>System Stats</name>
   <summary>Lightweight system monitoring applet for COSMIC desktop</summary>
@@ -30,11 +30,11 @@
     </p>
   </description>
 
-  <launchable type="desktop-id">io.github.rylan_x.cosmic-applet-systemstats.desktop</launchable>
+  <launchable type="desktop-id">io.github.rylan_x.cosmic-ext-applet-systemstats.desktop</launchable>
 
-  <url type="homepage">https://github.com/rylan-x/cosmic-applet-systemstats</url>
-  <url type="bugtracker">https://github.com/rylan-x/cosmic-applet-systemstats/issues</url>
-  <url type="vcs-browser">https://github.com/rylan-x/cosmic-applet-systemstats</url>
+  <url type="homepage">https://github.com/rylan-x/cosmic-ext-applet-systemstats</url>
+  <url type="bugtracker">https://github.com/rylan-x/cosmic-ext-applet-systemstats/issues</url>
+  <url type="vcs-browser">https://github.com/rylan-x/cosmic-ext-applet-systemstats</url>
 
   <content_rating type="oars-1.1"/>
 
@@ -56,7 +56,7 @@
   <screenshots>
     <screenshot type="default">
       <caption>System Stats applet displaying CPU, memory, network, and temperature monitors</caption>
-      <image>https://raw.githubusercontent.com/rylan-x/cosmic-applet-systemstats/main/res/screenshots/systemstats.png</image>
+      <image>https://raw.githubusercontent.com/rylan-x/cosmic-ext-applet-systemstats/main/res/screenshots/systemstats.png</image>
     </screenshot>
   </screenshots>
 

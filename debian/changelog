@@ -1,4 +1,4 @@
-cosmic-applet-systemstats (1.0.0-1) UNRELEASED; urgency=medium
+cosmic-ext-applet-systemstats (1.0.0-1) UNRELEASED; urgency=medium
 
   * Initial release
   * CPU usage monitoring

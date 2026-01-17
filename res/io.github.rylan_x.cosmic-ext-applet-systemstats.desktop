@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
 Name=System Stats
-Icon=io.github.rylan_x.cosmic-applet-systemstats
-Exec=cosmic-applet-systemstats
+Icon=io.github.rylan_x.cosmic-ext-applet-systemstats
+Exec=cosmic-ext-applet-systemstats
 Terminal=false
 Categories=System;Monitor;Utility;X-COSMIC;
 NoDisplay=true

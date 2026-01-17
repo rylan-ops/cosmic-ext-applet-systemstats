@@ -7,9 +7,9 @@ override_dh_auto_build:
 	just build-release
 
 override_dh_auto_install:
-	install -Dm755 target/release/cosmic-applet-systemstats debian/cosmic-applet-systemstats/usr/bin/cosmic-applet-systemstats
-	install -Dm644 res/io.github.rylan_x.cosmic-applet-systemstats.desktop debian/cosmic-applet-systemstats/usr/share/applications/io.github.rylan_x.cosmic-applet-systemstats.desktop
-	install -Dm644 res/io.github.rylan_x.cosmic-applet-systemstats.svg debian/cosmic-applet-systemstats/usr/share/icons/hicolor/scalable/apps/io.github.rylan_x.cosmic-applet-systemstats.svg
+	install -Dm755 target/release/cosmic-ext-applet-systemstats debian/cosmic-ext-applet-systemstats/usr/bin/cosmic-ext-applet-systemstats
+	install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.desktop debian/cosmic-ext-applet-systemstats/usr/share/applications/io.github.rylan_x.cosmic-ext-applet-systemstats.desktop
+	install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.svg debian/cosmic-ext-applet-systemstats/usr/share/icons/hicolor/scalable/apps/io.github.rylan_x.cosmic-ext-applet-systemstats.svg
 
 override_dh_auto_clean:
 	just clean || true

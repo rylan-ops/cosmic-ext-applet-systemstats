@@ -1,4 +1,4 @@
-Source: cosmic-applet-systemstats
+Source: cosmic-ext-applet-systemstats
 Section: admin
 Priority: optional
 Maintainer: Rylan <rylan-x@users.noreply.github.com>
@@ -13,11 +13,11 @@ Build-Depends:
  pkg-config,
  just
 Standards-Version: 4.6.2
-Homepage: https://github.com/rylan-x/cosmic-applet-systemstats
-Vcs-Git: https://github.com/rylan-x/cosmic-applet-systemstats.git
-Vcs-Browser: https://github.com/rylan-x/cosmic-applet-systemstats
+Homepage: https://github.com/rylan-x/cosmic-ext-applet-systemstats
+Vcs-Git: https://github.com/rylan-x/cosmic-ext-applet-systemstats.git
+Vcs-Browser: https://github.com/rylan-x/cosmic-ext-applet-systemstats
 
-Package: cosmic-applet-systemstats
+Package: cosmic-ext-applet-systemstats
 Architecture: amd64 arm64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: System monitoring applet for COSMIC desktop
