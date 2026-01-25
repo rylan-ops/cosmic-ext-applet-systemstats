@@ -12,6 +12,10 @@ A lightweight system monitoring applet for the COSMIC desktop environment.
 - CPU temperature
 - GPU temperature
 
+## Dependencies
+
+Building requires `just` and `libxkbcommon-dev`
+
 ## Installation
 
 ### Build and Install

@@ -19,6 +19,8 @@ pub fn format_network_speed(bytes_per_sec: u64) -> String {
     if mbps >= 1000.0 {
         let gbps = mbps / 1000.0;
         format!("{:.2} Gbps", gbps)
+    } else if mbps < 0.5 {
+        format!("0 Mbps")
     } else {
         format!("{:.1} Mbps", mbps)
     }
