@@ -37,5 +37,5 @@ modules:
       - type: git
         url: https://github.com/rylan-x/cosmic-ext-applet-systemstats.git
         tag: v1.0.0
-        commit: b9460c0b365a8f96b8db5c8cac2d90c58999b687
+        commit: 61e56803d6e48311c5e1dbffd898edd10ffadd8c
       - cargo-sources.json
