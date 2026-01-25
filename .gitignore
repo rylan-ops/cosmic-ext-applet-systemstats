@@ -4,7 +4,7 @@
 
 # Debian packaging artifacts
 /debian/.debhelper/
-/debian/cosmic-applet-systemstats/
+/debian/cosmic-ext-applet-systemstats/
 /debian/files
 /debian/*.log
 /debian/*.substvars
