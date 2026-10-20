@@ -1,4 +1,4 @@
-app-id: io.github.rylan_x.cosmic-ext-applet-systemstats
+app-id: io.github.rylan_ops.cosmic-ext-applet-systemstats
 runtime: org.freedesktop.Platform
 runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
@@ -30,12 +30,12 @@ modules:
       - cargo --offline fetch --manifest-path Cargo.toml --verbose
       - cargo --offline build --release --verbose
       - install -Dm755 target/release/cosmic-ext-applet-systemstats -t /app/bin/
-      - install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.desktop -t /app/share/applications/
-      - install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.svg /app/share/icons/hicolor/scalable/apps/io.github.rylan_x.cosmic-ext-applet-systemstats.svg
-      - install -Dm644 res/io.github.rylan_x.cosmic-ext-applet-systemstats.metainfo.xml -t /app/share/metainfo/
+      - install -Dm644 res/io.github.rylan_ops.cosmic-ext-applet-systemstats.desktop -t /app/share/applications/
+      - install -Dm644 res/io.github.rylan_ops.cosmic-ext-applet-systemstats.svg /app/share/icons/hicolor/scalable/apps/io.github.rylan_ops.cosmic-ext-applet-systemstats.svg
+      - install -Dm644 res/io.github.rylan_ops.cosmic-ext-applet-systemstats.metainfo.xml -t /app/share/metainfo/
     sources:
       - type: git
-        url: https://github.com/rylan-x/cosmic-ext-applet-systemstats.git
+        url: https://github.com/rylan-ops/cosmic-ext-applet-systemstats.git
         tag: v1.0.0
         commit: 61e56803d6e48311c5e1dbffd898edd10ffadd8c
       - cargo-sources.json

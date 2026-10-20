@@ -8,4 +8,4 @@ cosmic-ext-applet-systemstats (1.0.0-1) UNRELEASED; urgency=medium
   * TOML configuration system
   * Configurable refresh interval
 
- -- Rylan <rylan-x@users.noreply.github.com>  Thu, 02 Jan 2026 00:00:00 +0000
+ -- Rylan P <svc-github@rp-ops.com>  Thu, 02 Jan 2026 00:00:00 +0000

@@ -39,7 +39,7 @@ flatpak install --user cosmic-applet-systemstats.flatpak
 
 <!-- ### From Flathub
 ```bash
-flatpak install flathub io.github.rylan_x.cosmic-applet-systemstats
+flatpak install flathub io.github.rylan_ops.cosmic-ext-applet-systemstats
 ```
 -->
 

@@ -11,7 +11,7 @@ use crate::config::Config;
 use crate::formatting::*;
 use crate::monitors::MonitorStats;
 
-const ID: &str = "com.github.rylan-x.systemstats";
+const ID: &str = "io.github.rylan_ops.cosmic-ext-applet-systemstats";
 
 pub struct SystemStats {
     core: Core,

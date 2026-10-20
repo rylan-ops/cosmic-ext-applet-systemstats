@@ -1,7 +1,7 @@
 Source: cosmic-ext-applet-systemstats
 Section: admin
 Priority: optional
-Maintainer: Rylan <rylan-x@users.noreply.github.com>
+Maintainer: Rylan P <svc-github@rp-ops.com>
 Build-Depends:
  debhelper-compat (= 13),
  rustc (>= 1.73.0),
@@ -13,9 +13,9 @@ Build-Depends:
  pkg-config,
  just
 Standards-Version: 4.6.2
-Homepage: https://github.com/rylan-x/cosmic-ext-applet-systemstats
-Vcs-Git: https://github.com/rylan-x/cosmic-ext-applet-systemstats.git
-Vcs-Browser: https://github.com/rylan-x/cosmic-ext-applet-systemstats
+Homepage: https://github.com/rylan-ops/cosmic-ext-applet-systemstats
+Vcs-Git: https://github.com/rylan-ops/cosmic-ext-applet-systemstats.git
+Vcs-Browser: https://github.com/rylan-ops/cosmic-ext-applet-systemstats
 
 Package: cosmic-ext-applet-systemstats
 Architecture: amd64 arm64

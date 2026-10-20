@@ -1,7 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cosmic-applet-systemstats
-Upstream-Contact: Rylan <rylan-x@users.noreply.github.com>
-Source: https://github.com/rylan-x/cosmic-applet-systemstats
+Upstream-Contact: Rylan P <svc-github@rp-ops.com>
+Source: https://github.com/rylan-ops/cosmic-ext-applet-systemstats
 
 Files: *
 Copyright: 2025-2026 Rylan
