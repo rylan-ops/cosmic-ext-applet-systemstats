@@ -12,16 +12,17 @@ pub fn format_memory_gb(value: f32) -> String {
     format!("{:.1} GB", value)
 }
 
-/// Auto-switches to Gbps when >= 1000 Mbps
+/// Shows Kbps below 1 Mbps and auto-switches to Gbps when >= 1000 Mbps
 pub fn format_network_speed(bytes_per_sec: u64) -> String {
-    let mbps = bytes_per_sec as f64 / 125_000.0;
+    let kbps = bytes_per_sec as f64 / 125.0;
+    let mbps = kbps / 1000.0;
 
-    if mbps >= 1000.0 {
-        let gbps = mbps / 1000.0;
-        format!("{:.2} Gbps", gbps)
-    } else if mbps < 0.5 {
-        format!("0 Mbps")
-    } else {
+    // Thresholds account for rounding so we never show "1000 Kbps" or "1000.0 Mbps"
+    if kbps < 999.5 {
+        format!("{:.0} Kbps", kbps)
+    } else if mbps < 999.95 {
         format!("{:.1} Mbps", mbps)
+    } else {
+        format!("{:.2} Gbps", mbps / 1000.0)
     }
 }
