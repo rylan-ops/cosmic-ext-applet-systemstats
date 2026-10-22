@@ -1,93 +1,41 @@
+use std::path::Path;
+use std::time::Instant;
 use sysinfo::Networks;
 
 pub struct NetworkStats {
     networks: Networks,
-    primary_interface: Option<String>,
-    prev_rx_bytes: u64,
-    prev_tx_bytes: u64,
+    last_update: Instant,
     rx_bytes_per_sec: u64,
     tx_bytes_per_sec: u64,
 }
 
 impl NetworkStats {
     pub fn new() -> Self {
-        let networks = Networks::new_with_refreshed_list();
-        let mut primary_interface = None;
-        let mut prev_rx_bytes = 0;
-        let mut prev_tx_bytes = 0;
-
-        // Detect primary network interface
-        // First, try to find a non-loopback interface with traffic
-        for (interface_name, data) in &networks {
-            if interface_name == "lo" {
-                continue;
-            }
-            if data.total_received() > 0 || data.total_transmitted() > 0 {
-                primary_interface = Some(interface_name.to_string());
-                prev_rx_bytes = data.total_received();
-                prev_tx_bytes = data.total_transmitted();
-                break;
-            }
-        }
-
-        // If no interface with traffic found, use first non-loopback interface
-        if primary_interface.is_none() {
-            for (interface_name, data) in &networks {
-                if interface_name != "lo" {
-                    primary_interface = Some(interface_name.to_string());
-                    prev_rx_bytes = data.total_received();
-                    prev_tx_bytes = data.total_transmitted();
-                    break;
-                }
-            }
-        }
-
-        if let Some(ref iface) = primary_interface {
-            log::info!("Network interface detected: {}", iface);
-        } else {
-            log::warn!("No network interface found");
-        }
-
         Self {
-            networks,
-            primary_interface,
-            prev_rx_bytes,
-            prev_tx_bytes,
+            networks: Networks::new_with_refreshed_list(),
+            last_update: Instant::now(),
             rx_bytes_per_sec: 0,
             tx_bytes_per_sec: 0,
         }
     }
 
     pub fn update(&mut self) {
-        self.networks.refresh(false);
+        self.networks.refresh(true);
 
-        if let Some(ref interface_name) = self.primary_interface {
-            if let Some(data) = self
-                .networks
-                .iter()
-                .find(|(name, _)| *name == interface_name)
-                .map(|(_, data)| data)
-            {
-                let current_rx = data.total_received();
-                let current_tx = data.total_transmitted();
+        let elapsed = self.last_update.elapsed().as_secs_f64();
+        self.last_update = Instant::now();
 
-                // Calculate bytes per second (updates happen every 1 second)
-                // Use saturating_sub to handle counter wraparound
-                self.rx_bytes_per_sec = current_rx.saturating_sub(self.prev_rx_bytes);
-                self.tx_bytes_per_sec = current_tx.saturating_sub(self.prev_tx_bytes);
-
-                // Update previous values for next tick
-                self.prev_rx_bytes = current_rx;
-                self.prev_tx_bytes = current_tx;
-            } else {
-                log::warn!("Network interface disappeared");
-                self.rx_bytes_per_sec = 0;
-                self.tx_bytes_per_sec = 0;
+        let (mut rx, mut tx) = (0u64, 0u64);
+        for (interface_name, data) in &self.networks {
+            if is_physical_interface(interface_name) {
+                rx += data.received();
+                tx += data.transmitted();
             }
-        } else {
-            // No interface available
-            self.rx_bytes_per_sec = 0;
-            self.tx_bytes_per_sec = 0;
+        }
+
+        if elapsed > 0.0 {
+            self.rx_bytes_per_sec = (rx as f64 / elapsed) as u64;
+            self.tx_bytes_per_sec = (tx as f64 / elapsed) as u64;
         }
     }
 
@@ -98,4 +46,9 @@ impl NetworkStats {
     pub fn upload_bps(&self) -> u64 {
         self.tx_bytes_per_sec
     }
+}
+
+/// Virtual interfaces (VPN, docker) route through a physical one, so counting them would double traffic
+fn is_physical_interface(name: &str) -> bool {
+    Path::new("/sys/class/net").join(name).join("device").exists()
 }
