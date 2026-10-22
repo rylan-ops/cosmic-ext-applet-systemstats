@@ -29,7 +29,7 @@ sudo just install
 
 **.deb package:**
 ```bash
-sudo dpkg -i cosmic-applet-systemstats_1.0.0-1_amd64.deb
+sudo dpkg -i cosmic-ext-applet-systemstats_1.1.0-1_amd64.deb
 ```
 
 **.flatpak package:**

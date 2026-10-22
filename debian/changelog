@@ -1,3 +1,12 @@
+cosmic-ext-applet-systemstats (1.1.0-1) UNRELEASED; urgency=medium
+
+  * Show network speeds below 1 Mbps in Kbps
+  * Sum network traffic across physical interfaces, ignoring VPN and virtual interfaces
+  * Calculate network speeds correctly with custom refresh intervals
+  * Change app ID to io.github.rylan_ops.cosmic-ext-applet-systemstats
+
+ -- Rylan P <svc-github@rp-ops.com>  Thu, 22 Oct 2026 14:44:19 -0400
+
 cosmic-ext-applet-systemstats (1.0.0-1) UNRELEASED; urgency=medium
 
   * Initial release

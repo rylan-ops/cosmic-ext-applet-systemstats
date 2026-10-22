@@ -39,6 +39,15 @@
   <content_rating type="oars-1.1"/>
 
   <releases>
+    <release version="1.1.0" date="2026-10-22">
+      <description>
+        <ul>
+          <li>Network speeds below 1 Mbps are shown in Kbps</li>
+          <li>Network traffic is summed across physical interfaces, ignoring VPN and virtual interfaces</li>
+          <li>Network speeds are calculated correctly with custom refresh intervals</li>
+        </ul>
+      </description>
+    </release>
     <release version="1.0.0" date="2026-01-05">
       <description>
         <p>Initial release with core monitoring features:</p>
